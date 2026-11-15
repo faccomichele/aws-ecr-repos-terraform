@@ -1,7 +1,7 @@
 resource "aws_ecr_repository" "this" {
   for_each = local.docker_dirs
 
-  name                 = "${local.project_name}-${each.value}-${local.environment}"
+  name                 = "${local.project_name}/${each.value}/${local.environment}"
   image_tag_mutability = "MUTABLE"
   force_delete         = true
 
